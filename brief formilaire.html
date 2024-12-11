@@ -1,165 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Formulaire de Connexion</title>
   </head>
   <body>
-    <!-- Connexion -->
-
     <form action="">
-      <h2>Formulaire de connexion</h2>
+      <h2 style="text-align: center">Formulaire de Connexion</h2>
 
-      <!-- texte-->
-
-      <div>
+      <!-- Prénom -->
+      <div style="margin-bottom: 10px">
         <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" id="prenom" placeholder="prenom" /><br><br>
+        <input
+          type="text"
+          name="prenom"
+          id="prenom"
+          placeholder="Prénom"
+          style="width: 100%"
+          required
+        />
       </div>
 
-      <div>
+      <!-- Nom -->
+      <div style="margin-bottom: 10px">
         <label for="nom">Nom</label>
-        <input type="text" name="nom" id="nom" placeholder="nom" /><br><br>
+        <input
+          type="text"
+          name="nom"
+          id="nom"
+          placeholder="Nom"
+          style="width: 100%"
+          required
+        />
       </div>
 
-      <div>
-        <!-- Date de naissance (validation par date) -->
-        <label for="date_naissance">Date de naissance :</label>
-        <input type="date" id="date_naissance" name="date_naissance" required onchange="calculerAge()"><br><br>
-
-        <!-- Affichage de l'âge (calculé automatiquement) -->
-        <label for="age">Âge :</label>
-        <input type="number" id="age" name="age" readonly><br><br>
+      <!-- Date de naissance -->
+      <div style="margin-bottom: 10px">
+        <label for="date_naissance">Date de naissance</label>
+        <input
+          type="date"
+          id="date_naissance"
+          name="date_naissance"
+          required
+          onchange="calculerAge()"
+          style="width: 100%"
+        />
       </div>
 
-      <h3>Sexe</h3>
-      <div>
+      <!-- Âge -->
+      <div style="margin-bottom: 10px">
+        <label for="age">Âge</label>
+        <input type="number" id="age" name="age" readonly style="width: 100%" />
+      </div>
+
+      <!-- Sexe -->
+      <fieldset
+        style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px"
+      >
+        <legend>Sexe</legend>
         <input type="radio" id="homme" name="sexe" value="homme" />
-        <label for="homme"> H </label>
-
+        <label for="homme">Homme</label>
         <input type="radio" id="femme" name="sexe" value="femme" />
-        <label for="femme"> F </label><br /><br />
+        <label for="femme">Femme</label>
+      </fieldset>
+
+      <!-- Email -->
+      <div style="margin-bottom: 10px">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          style="width: 100%"
+          required
+        />
       </div>
 
-      
-
-      <div>
-        <label for="email">votre E-mail</label>
-        <input type="email" id="email" name="email" /><br></br>
-      </div>
-
-
-      <div>
-        <label for="pass">Mdp</label>
+      <!-- Mot de passe -->
+      <div style="margin-bottom: 10px">
+        <label for="pass">Mot de passe</label>
         <input
           type="password"
           id="pass"
           name="pass"
-          placeholder="votre mot de passe"><br></br>
+          placeholder="Votre mot de passe"
+          style="width: 100%"
+          required
+        />
       </div>
 
-      <div>
-        <label for="ville">votre ville</label>
-        <input type="text" name="city" id="city" placeholder="Votre ville" list="France"/>
-        <datalist id="france">
-          <option value="Lille">
-          <option value="Grenoble">
-          <option value="Paris">
-        </datalist><br></br>
+      <!-- Ville -->
+      <div style="margin-bottom: 10px">
+        <label for="ville">Votre ville</label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="Votre ville"
+          list="France"
+          style="width: 100%"
+          required
+        />
+        <datalist id="France">
+          <option value="Lille"></option>
+          <option value="Grenoble"></option>
+          <option value="Paris"></option>
+        </datalist>
       </div>
 
-
-      <div>
-        <label for="pays">votre pays de naissance</label>
-        <select id="pays" name="pays">
+      <!-- Pays -->
+      <div style="margin-bottom: 10px">
+        <label for="pays">Votre pays de naissance</label>
+        <select id="pays" name="pays" style="width: 100%" required>
           <option value="France">France</option>
           <option value="Guinée">Guinée</option>
-          <option value="Belgique">Belgique</option><br>
-      </div><br>
+          <option value="Belgique">Belgique</option>
+        </select>
+      </div>
 
-      <div>
+      <!-- Adresse -->
+      <div style="margin-bottom: 10px">
         <label for="address">Adresse</label>
-        <textarea name="address" id="address" cols="25" rows="1" placeholder="Address"></textarea><br><br>
+        <textarea
+          name="address"
+          id="address"
+          cols="30"
+          rows="3"
+          placeholder="Votre adresse"
+          style="width: 100%"
+          required
+        ></textarea>
       </div>
 
-      <div>
+      <!-- Code postal -->
+      <div style="margin-bottom: 10px">
         <label for="postalcode">Code postal</label>
-        <input type="email" id="postalcode" name="postalcode" placeholder="code postal" /><br></br>
+        <input
+          type="text"
+          id="postalcode"
+          name="postalcode"
+          placeholder="Code postal"
+          style="width: 100%"
+          required
+        />
       </div>
 
-      <div>
-         <!-- Métier exercé (choix unique) -->
-         <label for="metier">Métier exercé :</label>
-         <select id="metier" name="metier" required>
-             <option value="" disabled selected>Choisissez un métier</option>
-             <option value="developpeur">Développeur</option>
-             <option value="designer">Designer</option>
-             <option value="gestionnaire">Gestionnaire</option>
-             <option value="enseignant">Enseignant</option>
-             <option value="medecin">Médecin</option>
-         </select><br><br>
+      <!-- Métier -->
+      <div style="margin-bottom: 10px">
+        <label for="metier">Métier exercé</label>
+        <select id="metier" name="metier" style="width: 100%" required>
+          <option value="" disabled selected>Choisissez un métier</option>
+          <option value="developpeur">Développeur</option>
+          <option value="designer">Designer</option>
+          <option value="gestionnaire">Gestionnaire</option>
+          <option value="enseignant">Enseignant</option>
+          <option value="medecin">Médecin</option>
+        </select>
       </div>
 
-      <div>
-        <label for="nationalite">Nationalité :</label>
-        <select id="nationalite" name="nationalite" required>
-            <option value="française" selected>Française</option>
-            <option value="americaine">Américaine</option>
-            <option value="canadienne">Canadienne</option>
-            <option value="allemande">Allemande</option>
-            <option value="espagnole">Espagnole</option>
-            <option value="italienne">Italienne</option>
-        </select><br><br>
-      </div>
-     
-     
-     <div>
-        <label for="securite_sociale">Numéro de sécurité sociale :</label>
-        <input type="text" id="securite_sociale" name="securite_sociale" pattern="^[0-9]{15}$" title="Le numéro de sécurité sociale doit contenir exactement 15 chiffres." required><br><br>
-     </div>
-      
-     <div>
-        <label for="passeport">Numéro du passeport :</label>
-        <input type="text" id="passeport" name="passeport" pattern="^[A-Za-z0-9]{9}$" title="Le numéro du passeport doit contenir 9 caractères alphanumériques." required><br><br>
-     </div>
-
-     <div>
-        <label for="date_delivrance">Date de délivrance du passeport :</label>
-        <input type="date" id="date_delivrance" name="date_delivrance" required><br><br>
-     </div>
-
-     <div>
-       <label for="date_validite">Date de validité du passeport :</label>
-       <input type="date" id="date_validite" name="date_validite" required><br><br>
-     </div>
-      
-      
-      
-      <div>
-        <input type="submit" name inscription value="Se connecter" />
+      <!-- Nationalité -->
+      <div style="margin-bottom: 10px">
+        <label for="nationalite">Nationalité</label>
+        <select
+          id="nationalite"
+          name="nationalite"
+          style="width: 100%"
+          required
+        >
+          <option value="française" selected>Française</option>
+          <option value="americaine">Américaine</option>
+          <option value="canadienne">Canadienne</option>
+          <option value="allemande">Allemande</option>
+          <option value="espagnole">Espagnole</option>
+          <option value="italienne">Italienne</option>
+        </select>
       </div>
 
-      
+      <!-- Numéro de sécurité sociale -->
+      <div style="margin-bottom: 10px">
+        <label for="securite_sociale">Numéro de sécurité sociale</label>
+        <input
+          type="text"
+          id="securite_sociale"
+          name="securite_sociale"
+          pattern="^[0-9]{15}$"
+          title="Le numéro de sécurité sociale doit contenir exactement 15 chiffres."
+          required
+          style="width: 100%"
+        />
+      </div>
+
+      <!-- Numéro du passeport -->
+      <div style="margin-bottom: 10px">
+        <label for="passeport">Numéro du passeport</label>
+        <input
+          type="text"
+          id="passeport"
+          name="passeport"
+          pattern="^[A-Za-z0-9]{9}$"
+          title="Le numéro du passeport doit contenir 9 caractères alphanumériques."
+          required
+          style="width: 100%"
+        />
+      </div>
+
+      <!-- Dates de délivrance et validité -->
+      <div style="margin-bottom: 10px">
+        <label for="date_delivrance">Date de délivrance du passeport</label>
+        <input
+          type="date"
+          id="date_delivrance"
+          name="date_delivrance"
+          required
+          style="width: 100%"
+        />
+      </div>
+
+      <div style="margin-bottom: 10px">
+        <label for="date_validite">Date de validité du passeport</label>
+        <input
+          type="date"
+          id="date_validite"
+          name="date_validite"
+          required
+          style="width: 100%"
+        />
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div style="text-align: center; margin-top: 20px">
+        <input
+          type="submit"
+          value="Se connecter"
+          style="padding: 10px 20px; font-size: 16px"
+        />
+      </div>
     </form>
 
     <script>
       function calculerAge() {
-          var dateNaissance = document.getElementById("date_naissance").value;
-          var dateNaissanceObj = new Date(dateNaissance);
-          var today = new Date();
-          var age = today.getFullYear() - dateNaissanceObj.getFullYear();
-          var m = today.getMonth() - dateNaissanceObj.getMonth();
+        var dateNaissance = document.getElementById("date_naissance").value;
+        var dateNaissanceObj = new Date(dateNaissance);
+        var today = new Date();
+        var age = today.getFullYear() - dateNaissanceObj.getFullYear();
+        var m = today.getMonth() - dateNaissanceObj.getMonth();
 
-          // Si la date d'anniversaire n'est pas encore passée cette année
-          if (m < 0 || (m === 0 && today.getDate() < dateNaissanceObj.getDate())) {
-              age--;
-          }
+        if (
+          m < 0 ||
+          (m === 0 && today.getDate() < dateNaissanceObj.getDate())
+        ) {
+          age--;
+        }
 
-          document.getElementById("age").value = age;
+        document.getElementById("age").value = age;
       }
-  </script>
-
-  
+    </script>
   </body>
 </html>
